@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyExamTrack - Redirecting...</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .redirect-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+        }
+        .icon {
+            font-size: 4rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #6c757d;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            color: white;
+            text-decoration: none;
+        }
+        .countdown {
+            font-size: 1.2rem;
+            color: #667eea;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-card">
+        <div class="icon">🎓</div>
+        <h1>MyExamTrack</h1>
+        <p>Welcome to MyExamTrack - Your Personal Exam Countdown Dashboard!</p>
+        <p>You'll be automatically redirected to the application in <span id="countdown">5</span> seconds.</p>
+        <a href="index.php" class="btn">Go to Application Now</a>
+        <div class="countdown">
+            <p>If you're seeing this page, your XAMPP setup is working correctly! 🎉</p>
+        </div>
+    </div>
+
+    <script>
+        let count = 5;
+        const countdownElement = document.getElementById('countdown');
+        
+        const timer = setInterval(() => {
+            count--;
+            countdownElement.textContent = count;
+            
+            if (count <= 0) {
+                clearInterval(timer);
+                window.location.href = 'index.php';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
